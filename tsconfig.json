@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+			"target": "ESNext",
+			"module": "ESNext", // 指定要使用的模块系统如 esnext、commonjs 等
+			"moduleResolution": "nodenext", // 指定使用的模块解析策略，nodenext 表示Node.js中 ES Module ，node 则为 Common.js
+			"resolveJsonModule": true, // 让 TypeScript 支持解析 .json 文件，并对导入的 json 对象提供类型支持
+			"noImplicitAny": true,
+			"noImplicitThis": true,
+			"strictNullChecks": true,
+			"removeComments": true,
+			"esModuleInterop": true,
+			"preserveConstEnums": true,
+			"sourceMap": true
+	},
+	"include": [
+		"src/**/*"
+	],
+
+}
