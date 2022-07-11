@@ -1,5 +1,5 @@
 {
-  "name": "nagi",
+  "name": "vocli",
   "version": "0.0.1",
   "main": "dist/index.js",
   "description": "A CLI tool for quick building libraries",
@@ -8,18 +8,25 @@
     "src",
     "dist"
   ],
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.6.2",
     "typescript": "^4.6.3"
   },
   "engines": {
     "node": ">= 14.16.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+	"lint-staged": {
+		"*.{ts,js}": "eslint --fix"
+	}
 }
