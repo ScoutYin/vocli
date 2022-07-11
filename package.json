@@ -27,6 +27,7 @@
   },
   "license": "MIT",
 	"lint-staged": {
-		"*.{ts,js}": "eslint --fix"
+		"*.{vue,ts,js}": "eslint --fix",
+		"*.md": "prettier --write"
 	}
 }
