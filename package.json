@@ -12,6 +12,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "eslint": "^8.13.0",
@@ -26,8 +28,8 @@
     "node": ">= 14.16.0"
   },
   "license": "MIT",
-	"lint-staged": {
-		"*.{vue,ts,js}": "eslint --fix",
-		"*.md": "prettier --write"
-	}
+  "lint-staged": {
+    "*.{vue,ts,js}": "eslint --fix",
+    "*.md": "prettier --write"
+  }
 }
