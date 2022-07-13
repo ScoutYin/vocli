@@ -12,8 +12,17 @@
 			"preserveConstEnums": true,
 			"sourceMap": true
 	},
+	"ts-node": {
+    // It is faster to skip typechecking.
+    // Remove if you want ts-node to do typechecking.
+    "transpileOnly": true,
+    "files": true,
+		// 表示处理的都是ES Module模块
+		"esm": true,
+  },
+
 	"include": [
-		"src/**/*"
+		"scripts/**/*.ts"
 	],
 
 }

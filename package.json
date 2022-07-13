@@ -1,6 +1,7 @@
 {
   "name": "vocli",
   "version": "0.0.1",
+  "type": "module",
   "main": "dist/index.js",
   "description": "A CLI tool for quick building libraries",
   "author": "ScoutYin <scoutyin.1900@gmail.com>",
@@ -9,19 +10,26 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "create": "ts-node scripts/create-package.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^8.2.1",
+    "@types/node": "^18.0.3",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "fs-extra": "^10.1.0",
     "husky": "^8.0.0",
+    "inquirer": "^9.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.6.2",
+    "ts-node": "^10.8.2",
     "typescript": "^4.6.3"
   },
   "engines": {
