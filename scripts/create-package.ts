@@ -2,10 +2,10 @@ import inquirer from 'inquirer';
 import fs from 'fs-extra';
 import { resolve } from 'path';
 
-const WORKSPACE_DIRS = ['commands/', 'packages/'];
+const WORKSPACE_DIRS = ['commands/', 'packages/'] as const;
 
 interface Answers {
-	dir: 'commands/' | 'packages/';
+	dir: typeof WORKSPACE_DIRS[number];
 	packageName: string;
 	description: string;
 }
