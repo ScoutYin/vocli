@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
 import fs from 'fs-extra';
+import chalk from 'chalk';
 import { resolve } from 'path';
 
 const WORKSPACE_DIRS = ['commands/', 'packages/'] as const;
@@ -27,7 +28,6 @@ const prompt = async (): Promise<Answers> => {
 			type: 'input',
 			message: 'Package name:',
 			name: 'packageName',
-			default: '@vocli/add',
 		},
 		{
 			type: 'input',
@@ -42,13 +42,29 @@ const createPackage = async () => {
 	const answers = await prompt();
 
 	const { dir, packageName } = answers;
-	const packageDirName = packageName.replace(/@vocli\//, '');
+	const packageDirName = packageName.replace(new RegExp(SCOPE), '');
 
 	const dirPath = resolve(cwd, dir, packageDirName);
 	const dest = resolve(dirPath, 'package.json');
 
 	if (fs.existsSync(dest)) {
-		// TODO
+		console.log();
+		console.log(chalk.yellowBright('This file already exists:'));
+		console.log();
+		console.log(chalk.yellow(`  - ${dest}`));
+		console.log();
+
+		const { shouldOverwrite } = await inquirer.prompt([
+			{
+				type: 'confirm',
+				message: 'So, Would you like to overwrite it?',
+				name: 'shouldOverwrite',
+				default: false,
+			},
+		]);
+		if (!shouldOverwrite) {
+			return;
+		}
 	} else {
 		fs.mkdirSync(dirPath);
 	}
@@ -59,9 +75,8 @@ const createPackage = async () => {
 	packageJson.name = packageName;
 	packageJson.description = answers.description;
 	packageJson.homepage += `/${dir}`;
-	if (packageName) {
-		const name = packageName.replace(new RegExp(SCOPE), '');
-		packageJson.repository.directory = dir + name;
+	if (packageDirName) {
+		packageJson.repository.directory = dir + packageDirName;
 	}
 
 	fs.writeFile(dest, JSON.stringify(packageJson));
