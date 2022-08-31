@@ -1,0 +1,24 @@
+{
+	"stylelint.enable": true,
+	"stylelint.validate": ["css", "less", "postcss", "scss", "vue"],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"[vue]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true,
+			"source.fixAll.stylelint": true
+		}
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.stylelint": true
+		}
+	},
+	"pathAlias.aliasMap": {
+		"@": "${cwd}/src"
+	},
+	"cSpell.words": ["echarts", "stylelint", "browserslist", "qrcode", "alicdn", "camelcase", "vocli"]
+}

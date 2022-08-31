@@ -1,0 +1,9 @@
+dist
+node_modules
+public
+assets
+**/*.css
+**/*.html
+**/*.min.js
+*.md
+.husky
