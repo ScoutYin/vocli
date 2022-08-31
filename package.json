@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "create": "ts-node scripts/create-package.ts"
+    "create": "ts-node scripts/create-package.ts",
+		"dev:template": "pnpm --filter @vocli/template dev"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
