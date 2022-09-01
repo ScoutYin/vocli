@@ -12,6 +12,7 @@
   "scripts": {
     "prepare": "husky install",
     "create": "ts-node scripts/create-package.ts",
+		"dev:init": "pnpm --filter init dev",
 		"dev:template": "pnpm --filter @vocli/template dev"
   },
   "devDependencies": {
