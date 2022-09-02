@@ -20,5 +20,15 @@
 	"pathAlias.aliasMap": {
 		"@": "${cwd}/src"
 	},
-	"cSpell.words": ["echarts", "stylelint", "browserslist", "qrcode", "alicdn", "camelcase", "vocli"]
+	"cSpell.words": [
+		"echarts",
+		"stylelint",
+		"browserslist",
+		"qrcode",
+		"alicdn",
+		"camelcase",
+		"vocli",
+		"cssnano",
+		"photoswipe"
+	]
 }
