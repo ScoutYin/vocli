@@ -79,7 +79,7 @@ const createPackage = async () => {
 		packageJson.repository.directory = dir + packageDirName;
 	}
 
-	fs.writeFile(dest, JSON.stringify(packageJson));
+	fs.writeFile(dest, JSON.stringify(packageJson, null, 2));
 };
 
 createPackage();
