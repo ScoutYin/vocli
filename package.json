@@ -1,14 +1,9 @@
 {
-  "name": "vocli",
-  "version": "0.0.1",
+  "name": "vocli-monorepo",
+	"private": true,
   "type": "module",
-  "main": "dist/index.js",
-  "description": "A CLI tool for quick building libraries",
+  "description": "A CLI tool for quick building project",
   "author": "ScoutYin <scoutyin.1900@gmail.com>",
-  "files": [
-    "src",
-    "dist"
-  ],
   "scripts": {
     "prepare": "husky install",
     "create": "ts-node scripts/create-package.ts",
