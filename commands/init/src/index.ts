@@ -6,7 +6,7 @@ import { createCliConfig } from './create-cli-config.js';
 import { copyTemplate } from './copy-template.js';
 import type { Cli, CommandRegister } from 'vocli';
 
-interface Answers {
+export interface Answers {
 	projectName: string;
 	projectAlias: string;
 }
