@@ -1,10 +1,10 @@
 import { resolve, dirname } from 'path';
 import fs from 'fs-extra';
 
-export const resolvePackage = (pkgName) => {
+export const resolvePackage = (pkgName: string) => {
 	const cwd = process.cwd();
 
-	const _find = (pkgPath) => {
+	const _find = (pkgPath: string): string | null => {
 		if (fs.existsSync(pkgPath)) {
 			return pkgPath;
 		}
