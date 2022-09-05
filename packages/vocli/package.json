@@ -1,0 +1,31 @@
+{
+  "name": "vocli",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "vocli",
+  "keywords": [
+    "vocli"
+  ],
+  "files": [],
+  "main": "index.js",
+  "engines": {
+    "node": "^14.15.0 || >=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "ScoutYin",
+    "url": "https://github.com/ScoutYin"
+  },
+  "homepage": "https://github.com/ScoutYin/vocli/packages/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScoutYin/vocli.git",
+    "directory": "packages/vocli"
+  },
+  "bugs": {
+    "url": "https://github.com/ScoutYin/vocli/issues"
+  },
+  "license": "MIT"
+}
