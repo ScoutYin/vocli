@@ -22,6 +22,9 @@ importers:
       prettier: ^2.6.2
       ts-node: ^10.8.2
       typescript: ^4.6.3
+      vocli: workspace:^0.0.1
+    dependencies:
+      vocli: link:packages/vocli
     devDependencies:
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
@@ -46,15 +49,25 @@ importers:
     specifiers:
       '@vocli/shared': workspace:^0.0.1
       '@vocli/template': workspace:^0.0.1
+      vocli: workspace:^0.0.1
     dependencies:
       '@vocli/shared': link:../../packages/shared
       '@vocli/template': link:../../packages/template
+      vocli: link:../../packages/vocli
 
   packages/shared:
     specifiers:
       fs-extra: ^10.1.0
     dependencies:
       fs-extra: 10.1.0
+
+  packages/vocli:
+    specifiers:
+      '@vocli/init': workspace:^0.0.1
+      cac: ^6.7.14
+    dependencies:
+      '@vocli/init': link:../../commands/init
+      cac: 6.7.14
 
 packages:
 
@@ -655,6 +668,11 @@ packages:
       base64-js: 1.5.1
       ieee754: 1.2.1
     dev: true
+
+  /cac/6.7.14:
+    resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
+    engines: {node: '>=8'}
+    dev: false
 
   /callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}

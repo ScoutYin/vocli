@@ -4,6 +4,7 @@ import chalk from 'chalk';
 import { resolve } from 'path';
 import { createCliConfig } from './create-cli-config.js';
 import { copyTemplate } from './copy-template.js';
+import type { Cli, CommandRegister } from 'vocli';
 
 interface Answers {
 	projectName: string;
@@ -59,4 +60,11 @@ const init = async () => {
 	createCliConfig(projectDir, { projectAlias });
 };
 
-init();
+const initCommandRegister: CommandRegister = (cli: Cli) => {
+	cli.command('init', 'Create a project').action(() => {
+		console.log('TODO: init');
+
+		init();
+	});
+};
+export default initCommandRegister;

@@ -33,6 +33,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@vocli/shared": "workspace:^0.0.1",
-		"@vocli/template": "workspace:^0.0.1"
+		"@vocli/template": "workspace:^0.0.1",
+		"vocli": "workspace:^0.0.1"
 	}
 }

@@ -7,7 +7,8 @@
     "vocli"
   ],
   "files": [],
-  "main": "index.js",
+  "main": "src/index.js",
+  "types": "./src/types.ts",
   "engines": {
     "node": "^14.15.0 || >=16.0.0"
   },
@@ -27,5 +28,9 @@
   "bugs": {
     "url": "https://github.com/ScoutYin/vocli/issues"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@vocli/init": "workspace:^0.0.1",
+    "cac": "^6.7.14"
+  }
 }

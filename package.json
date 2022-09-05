@@ -1,14 +1,14 @@
 {
   "name": "vocli-monorepo",
-	"private": true,
+  "private": true,
   "type": "module",
   "description": "A CLI tool for quick building project",
   "author": "ScoutYin <scoutyin.1900@gmail.com>",
   "scripts": {
     "prepare": "husky install",
     "create": "ts-node scripts/create-package.ts",
-		"dev:init": "pnpm --filter init dev",
-		"dev:template": "pnpm --filter @vocli/template dev"
+    "dev:init": "pnpm --filter init dev",
+    "dev:template": "pnpm --filter @vocli/template dev"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -37,5 +37,8 @@
   "lint-staged": {
     "*.{vue,ts,js}": "eslint --fix",
     "*.md": "prettier --write"
+  },
+  "dependencies": {
+    "vocli": "workspace:^0.0.1"
   }
 }
