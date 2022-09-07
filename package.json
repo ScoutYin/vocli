@@ -8,7 +8,8 @@
     "prepare": "husky install",
     "create": "ts-node scripts/create-package.ts",
     "dev:init": "pnpm --filter init dev",
-    "dev:template": "pnpm --filter @vocli/template dev"
+    "dev:template": "pnpm --filter @vocli/template dev",
+		"build": "ts-node scripts/build.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -19,6 +20,7 @@
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "chalk": "^5.0.1",
+    "esbuild": "^0.15.7",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",

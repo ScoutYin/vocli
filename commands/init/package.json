@@ -7,7 +7,9 @@
 		"vocli"
 	],
 	"files": [],
-	"main": "src/index.js",
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "./src/index.ts",
 	"scripts": {
 		"dev": "ts-node ./src/index.ts"
 	},
