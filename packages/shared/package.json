@@ -1,13 +1,13 @@
 {
 	"name": "@vocli/shared",
 	"version": "0.0.1",
-	"type": "module",
 	"description": "@vocli/shared",
 	"keywords": [
 		"vocli"
 	],
 	"files": [],
-	"main": "src/index.js",
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
 	"engines": {
 		"node": "^14.15.0 || >=16.0.0"
 	},

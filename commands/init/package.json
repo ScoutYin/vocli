@@ -1,7 +1,6 @@
 {
 	"name": "@vocli/init",
 	"version": "0.0.1",
-	"type": "module",
 	"description": "@vocli/init",
 	"keywords": [
 		"vocli"
