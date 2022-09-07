@@ -7,7 +7,8 @@
     "vocli"
   ],
   "files": [],
-  "main": "index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "engines": {
     "node": "^14.15.0 || >=16.0.0"
   },
