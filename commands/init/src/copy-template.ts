@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import { resolve } from 'path';
 import { resolvePackage } from '@vocli/shared';
-import type { Answers } from './index.js';
+import type { Answers } from './index';
 
 export const copyTemplate = async (
 	projectDir: string,

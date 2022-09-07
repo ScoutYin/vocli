@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import { resolve } from 'path';
-import type { Answers } from './index.js';
+import type { Answers } from './index';
 
 export const createCliConfig = async (
 	projectDir: string,

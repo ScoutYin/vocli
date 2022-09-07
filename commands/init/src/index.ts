@@ -2,8 +2,8 @@ import inquirer from 'inquirer';
 import fs from 'fs-extra';
 import chalk from 'chalk';
 import { resolve } from 'path';
-import { createCliConfig } from './create-cli-config.js';
-import { copyTemplate } from './copy-template.js';
+import { createCliConfig } from './create-cli-config';
+import { copyTemplate } from './copy-template';
 import type { Cli, CommandRegister } from 'vocli';
 
 export interface Answers {
