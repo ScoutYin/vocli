@@ -8,6 +8,7 @@
 	"files": [],
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
+	"types": "src/index.ts",
 	"engines": {
 		"node": "^14.15.0 || >=16.0.0"
 	},
