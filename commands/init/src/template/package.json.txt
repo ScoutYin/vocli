@@ -1,6 +1,7 @@
 {
 	"name": "",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"start": "npm run dev",
 		"dev": "npm run serve",

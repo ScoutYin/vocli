@@ -5,7 +5,9 @@
   "keywords": [
     "vocli"
   ],
-  "files": [],
+  "files": [
+		"dist"
+	],
 	"bin": "dist/index.cjs",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",

@@ -25,13 +25,13 @@ module.exports = {
 		'plugin:prettier/recommended',
 	],
 	plugins: ['markdown', 'vue'],
-	settings: {
-		'import/resolver': {
-			node: {
-				extensions: ['.js', '.vue'],
-			},
-		},
-	},
+	// settings: {
+	// 	'import/resolver': {
+	// 		node: {
+	// 			extensions: ['.js', '.vue'],
+	// 		},
+	// 	},
+	// },
 	globals: {
 		_global: 'readonly',
 	},

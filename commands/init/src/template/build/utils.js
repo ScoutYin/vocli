@@ -5,7 +5,7 @@ import { resolve } from 'path';
  * TODO: __dirname 不是当前文件夹，原因未知
  */
 const nms = [
-	resolve(__dirname, '../node_modules'),
+	resolve(import.meta.url, '../node_modules'),
 	resolve(process.cwd(), './node_modules'),
 	...module.paths,
 ];

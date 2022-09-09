@@ -1,16 +1,27 @@
 import fs from 'fs-extra';
 import { resolve } from 'path';
-import { resolvePackage } from '@vocli/shared';
+// import { createRequire } from 'node:module';
 import type { Answers } from './index';
 
 export const copyTemplate = async (
 	projectDir: string,
 	{ projectName }: Pick<Answers, 'projectName'>
 ) => {
-	const packagePath = resolvePackage('@vocli/template');
-	if (!packagePath) return;
+	// console.log(process.cwd());
 
-	const templateDir = resolve(packagePath, 'src');
+	// const require = createRequire(process.cwd());
+
+	// console.log(require.resolve.paths('@vocli/init'));
+	// const templatePackageDir = require.resolve('@vocli/init');
+
+	// console.log(templatePackageDir, '--templatePackageDir--');
+
+	// if (!templatePackageDir) return;
+
+	// const templateDir = resolve(templatePackageDir, 'template');
+	const templateDir = resolve(import.meta.url, './template');
+	console.log(import.meta.url, 'import.meta.url');
+	console.log(templateDir, '---templateDir--');
 
 	await fs.copy(templateDir, projectDir, {
 		filter: (src, dest) => {

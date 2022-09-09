@@ -34,6 +34,6 @@
 		"packages/*/src",
 	],
 	"exclude": [
-		"packages/template/*",
+		"commands/init/src/template/*",
 	],
 }

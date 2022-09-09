@@ -56,15 +56,14 @@ const init = async () => {
 		fs.mkdirSync(projectDir);
 	}
 
-	copyTemplate(projectDir, { projectName });
+	await copyTemplate(projectDir, { projectName });
 	createCliConfig(projectDir, { projectAlias });
 };
 
 const initCommandRegister: CommandRegister = (cli: Cli) => {
 	cli.command('init', 'Create a project').action(() => {
-		console.log('TODO: init');
-
 		init();
 	});
 };
+
 export default initCommandRegister;

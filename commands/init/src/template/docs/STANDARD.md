@@ -1,8 +1,8 @@
 ## Vue 编写规范
 
-##### 1.【强制】单行代码不超过120。元素属性合理换行，尽量不超过120，像一些正则表达式除外。
+##### 1.【强制】单行代码不超过 120。元素属性合理换行，尽量不超过 120，像一些正则表达式除外。
 
-##### 2.【强制】缩进规范。`tab-size`为4，统一采用`tab`缩进， 不可出现`space`缩进。
+##### 2.【强制】缩进规范。`tab-size`为 4，统一采用`tab`缩进， 不可出现`space`缩进。
 
 ##### 3.【强制】空格规范。
 
@@ -17,68 +17,67 @@
 1. 文件名全部采用连字符, 例：`xx-xx`。
 2. 元素名称使用连字符分隔单词，自定义元素切勿使用保留字。
 
-	1. `<vc-paging />` wya-vc组件使用
-	2. `<xls-button />` 项目内部自定义组件使用
+   1. `<vc-paging />` wya-vc 组件使用
+   2. `<xls-button />` 项目内部自定义组件使用
 
 3. 验证组件的 `props`。
 4. 自定义事件属性名称 handle[]：如：`@change="handleChange"`。
-5. 自定义方法名称 
-	- 请求数据：load[],如：`:load-data="loadData"`。
-	- 获取数据: get[], 
-	- 设置数据: set[],
-	- 其他【建议】: show[],hide[],toggle[]等
+5. 自定义方法名称
+
+   - 请求数据：load[],如：`:load-data="loadData"`。
+   - 获取数据: get[],
+   - 设置数据: set[],
+   - 其他【建议】: show[],hide[],toggle[]等
 
 6. 自定义组件发射的事件名称不要带 `on-`。
 
-
 ##### 5.【强制】组件结构规范。
+
 ```html
-<template>
-</template>
+<template> </template>
 
 <script>
-import XXX from 'xxx';
+	import XXX from 'xxx';
 
-export default {
-	name: "vc-tpl-basic",
-	components: {
-		'xxx': XXX,
-	},
-	directives: {},
-	mixins: [],
-	setup() {
-		// ref
-		// computed
-		// watch
-		// lifetimes
-		// ...
-		return {};
-	}
-};
+	export default {
+		name: 'vc-tpl-basic',
+		components: {
+			xxx: XXX,
+		},
+		directives: {},
+		mixins: [],
+		setup() {
+			// ref
+			// computed
+			// watch
+			// lifetimes
+			// ...
+			return {};
+		},
+	};
 </script>
 
-<style lang="scss"> // 禁用scoped
-.v-home {
-	._header {
-	
+<style lang="scss">
+	// 禁用scoped
+	.v-home {
+		._header {
+		}
 	}
-}
 
-.v-home-order {
-	._header {
-	
+	.v-home-order {
+		._header {
+		}
 	}
-}
 </style>
-
 ```
+
 ##### 6.【强制】request/ajax/mutation。
 
 1. 所有的接口必须定义在`@stroes/apis`
 2. 范围: `@stores/apis`, `@stores/modules`, 以及组件内的使用
-3. 路由形式划分`mutation`, 网络层请求必须带上`[路由规则]_GET`或`[路由规则]_POST`, resetful下新增`[路由规则]_PUT`和`[路由规则]_DELETE`
+3. 路由形式划分`mutation`, 网络层请求必须带上`[路由规则]_GET`或`[路由规则]_POST`, resetful 下新增`[路由规则]_PUT`和`[路由规则]_DELETE`
 4. 分页统一使用`[路由规则]_INIT`和`[路由规则]_RESET`
-5. 如果只是纯ajax, 不由vuex管理，也就是使用`this.$request`时, 规则为`_[路由规则]_[ajaxType]`
+5. 如果只是纯 ajax, 不由 vuex 管理，也就是使用`this.$request`时, 规则为`_[路由规则]_[ajaxType]`
 
 ```
 // 异步
@@ -95,6 +94,7 @@ export default {
 'HOME_DETAIL_TYPE_CHANGE'
 
 ```
+
 ##### 7.【强制】样式命名规范。尽量多使用全局样式。
 
 1. 普通页面：`v-(路由简写)-(组件模块)`;`v-home-header`,内部：`_(模块)`;`_tabs`
@@ -107,7 +107,7 @@ export default {
 2. 页面搜索条件加在`url`上，做到搜索、编辑、删除等操作界面合理。
 3. 无用`console`请注释或删除。
 4. 无用文件(`__tpl__`)及时删除。
-5. Modal弹框全部采用`new Portal`， 如果属于某个页面模块下的话，创建一个`popup`文件夹，统一放入其中
+5. Modal 弹框全部采用`new Portal`， 如果属于某个页面模块下的话，创建一个`popup`文件夹，统一放入其中
 6. 及时处理`eslint`提示的错误和警告。
 
 ##### 9.【强制】权限管理(强制)。
@@ -118,7 +118,7 @@ export default {
 
 ##### 10.【强制】协作规范。
 
- - 第三方库的引用必须申请
- - 新页面必须向负责人申请建立路由
- - 切换分支时，必须关闭webpack服务
- - 禁止使用任何iView组件
+- 第三方库的引用必须申请
+- 新页面必须向负责人申请建立路由
+- 切换分支时，必须关闭 webpack 服务
+- 禁止使用任何 iView 组件
