@@ -32,6 +32,7 @@
 	"include": [
 		"commands/*/src",
 		"packages/*/src",
+		"scripts/*.ts"
 	],
 	"exclude": [
 		"commands/init/src/template/*",

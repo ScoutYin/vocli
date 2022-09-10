@@ -6,10 +6,10 @@
   "author": "ScoutYin <scoutyin.1900@gmail.com>",
   "scripts": {
     "prepare": "husky install",
-    "create": "ts-node -P tsconfig.base.json scripts/create-package.ts",
+    "create": "ts-node scripts/create-package.ts",
     "dev:init": "pnpm --filter init dev",
     "dev:template": "pnpm --filter @vocli/template dev",
-    "build": "ts-node -P tsconfig.base.json scripts/build.ts"
+    "build": "ts-node scripts/build.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
