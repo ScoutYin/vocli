@@ -1,5 +1,5 @@
 import cac from 'cac';
-import type { Cli, CommandRegister } from './types';
+import type { Cli, CommandRegister } from '@vocli/shared';
 import initCmd from '@vocli/init';
 
 class Vocli {

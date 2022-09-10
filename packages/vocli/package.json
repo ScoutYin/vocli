@@ -6,12 +6,12 @@
     "vocli"
   ],
   "files": [
-		"dist"
-	],
-	"bin": "dist/index.cjs",
+    "dist"
+  ],
+  "bin": "dist/index.cjs",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "./src/types.ts",
+  "types": "./src/index.ts",
   "engines": {
     "node": "^14.15.0 || >=16.0.0"
   },
@@ -34,6 +34,7 @@
   "license": "MIT",
   "dependencies": {
     "@vocli/init": "workspace:^0.0.1",
+    "@vocli/shared": "workspace:^0.0.1",
     "cac": "^6.7.14"
   }
 }

@@ -67,16 +67,20 @@ importers:
 
   packages/shared:
     specifiers:
+      cac: ^6.7.14
       fs-extra: ^10.1.0
     dependencies:
+      cac: 6.7.14
       fs-extra: 10.1.0
 
   packages/vocli:
     specifiers:
       '@vocli/init': workspace:^0.0.1
+      '@vocli/shared': workspace:^0.0.1
       cac: ^6.7.14
     dependencies:
       '@vocli/init': link:../../commands/init
+      '@vocli/shared': link:../shared
       cac: 6.7.14
 
 packages:

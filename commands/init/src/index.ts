@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import { resolve } from 'path';
 import { createCliConfig } from './create-cli-config';
 import { copyTemplate } from './copy-template';
-import type { Cli, CommandRegister } from 'vocli';
+import type { Cli, CommandRegister } from '@vocli/shared';
 
 export interface Answers {
 	projectName: string;
