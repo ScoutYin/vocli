@@ -10,7 +10,7 @@
 	],
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
-	"types": "./src/index.ts",
+	"types": "dist/init.d.ts",
 	"scripts": {
 		"dev": "ts-node ./src/index.ts"
 	},

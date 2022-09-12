@@ -9,11 +9,13 @@
     "create": "ts-node scripts/create-package.ts",
     "dev:init": "pnpm --filter init dev",
     "dev:template": "pnpm --filter @vocli/template dev",
-    "build": "ts-node scripts/build.ts"
+    "build": "pnpm build:dts && ts-node scripts/build.ts",
+		"build:dts": "tsc"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@microsoft/api-extractor": "^7.30.0",
     "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^8.2.1",
     "@types/node": "^18.0.3",

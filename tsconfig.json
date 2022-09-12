@@ -1,8 +1,9 @@
 {
 	"compilerOptions": {
+		"baseUrl": ".",
 			"outDir": "dist",
 			"target": "ES2015",
-			"module": "CommonJS", // 指定生成的哪个模块化方案的模块代码， esnext、commonjs 等
+			"module": "ESNext", // 指定生成的哪个模块化方案的模块代码， esnext、commonjs 等
 			"moduleResolution": "Node", // 指定使用的模块解析策略，nodenext 表示Node.js中 ES Module ，node 则为 Common.js
 			"resolveJsonModule": true, // 让 TypeScript 支持解析 .json 文件，并对导入的 json 对象提供类型支持
 			"noImplicitAny": true,
@@ -32,7 +33,6 @@
 	"include": [
 		"commands/*/src",
 		"packages/*/src",
-		"scripts/*.ts"
 	],
 	"exclude": [
 		"commands/init/src/template/*",

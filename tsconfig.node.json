@@ -1,0 +1,8 @@
+// The config for node scripts.
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "ESNext", // 指定生成的哪个模块化方案的模块代码， esnext、commonjs 等
+	},
+	"include": ["scripts/*.ts"]
+}

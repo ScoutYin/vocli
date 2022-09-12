@@ -3,24 +3,29 @@ import esbuild from 'esbuild';
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import { resolve } from 'path';
+import { Extractor, ExtractorConfig } from '@microsoft/api-extractor';
 import type { BuildOptions, BuildResult } from 'esbuild';
 
 interface BuildConfig {
 	dir: string;
+	unscopedPackageName: string;
 }
 
 const sharedBuildConfig: BuildConfig = {
 	dir: 'packages/shared',
+	unscopedPackageName: 'shared',
 };
 
 const commandBuildConfigs: BuildConfig[] = [
 	{
 		dir: 'commands/init',
+		unscopedPackageName: 'init',
 	},
 ];
 
 const vocliBuildConfig: BuildConfig = {
 	dir: 'packages/vocli',
+	unscopedPackageName: 'vocli',
 };
 
 /**
@@ -76,6 +81,33 @@ const buildPackage = (packageConfig: BuildConfig) => {
 	];
 };
 
+const buildTypes = () => {
+	[sharedBuildConfig, ...commandBuildConfigs, vocliBuildConfig].forEach((packageConfig) => {
+		const apiExtractorJsonPath = resolve(packageConfig.dir, 'api-extractor.json');
+		const extractorConfig = ExtractorConfig.loadFileAndPrepare(apiExtractorJsonPath);
+		const extractorResult = Extractor.invoke(extractorConfig, {
+			localBuild: true,
+			showVerboseMessages: true,
+		});
+		if (extractorResult.succeeded) {
+			console.log(
+				chalk.bold(
+					chalk.green(
+						`API Extractor: ${packageConfig.unscopedPackageName}.d.ts generated successfully.`
+					)
+				)
+			);
+		} else {
+			console.error(
+				`API Extractor completed with ${extractorResult.errorCount} errors` +
+					` and ${extractorResult.warningCount} warnings`
+			);
+			process.exitCode = 1;
+		}
+	});
+	fs.remove(resolve(process.cwd(), 'dist'));
+};
+
 const build = async () => {
 	const buildTasks: Promise<BuildResult>[] = [];
 
@@ -84,6 +116,7 @@ const build = async () => {
 	});
 
 	// TODO: build types.
+	buildTypes();
 
 	// build shared package, as a dependence, so it needs build first.
 	await Promise.all(buildPackage(sharedBuildConfig));

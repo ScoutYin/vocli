@@ -11,7 +11,7 @@
   "bin": "dist/index.cjs",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "./src/index.ts",
+  "types": "dist/vocli.d.ts",
   "engines": {
     "node": "^14.15.0 || >=16.0.0"
   },
