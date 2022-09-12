@@ -22,5 +22,6 @@
 	"files.associations": {
 		"*.cjson": "jsonc",
 		"*.json": "jsonc"
-	}
+	},
+	"editor.formatOnSave": true
 }

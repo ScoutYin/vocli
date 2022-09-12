@@ -89,6 +89,7 @@ const buildTypes = () => {
 			localBuild: true,
 			showVerboseMessages: true,
 		});
+
 		if (extractorResult.succeeded) {
 			console.log(
 				chalk.bold(
@@ -105,6 +106,7 @@ const buildTypes = () => {
 			process.exitCode = 1;
 		}
 	});
+
 	fs.remove(resolve(process.cwd(), 'dist'));
 };
 
@@ -115,7 +117,6 @@ const build = async () => {
 		buildTasks.push(...buildPackage(packageConfig));
 	});
 
-	// TODO: build types.
 	buildTypes();
 
 	// build shared package, as a dependence, so it needs build first.

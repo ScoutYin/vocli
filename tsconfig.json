@@ -1,40 +1,35 @@
 {
 	"compilerOptions": {
 		"baseUrl": ".",
-			"outDir": "dist",
-			"target": "ES2015",
-			"module": "ESNext", // 指定生成的哪个模块化方案的模块代码， esnext、commonjs 等
-			"moduleResolution": "Node", // 指定使用的模块解析策略，nodenext 表示Node.js中 ES Module ，node 则为 Common.js
-			"resolveJsonModule": true, // 让 TypeScript 支持解析 .json 文件，并对导入的 json 对象提供类型支持
-			"noImplicitAny": true,
-			"noImplicitThis": true,
-			"strictNullChecks": true,
-			"removeComments": true,
-			"esModuleInterop": true,
-			"preserveConstEnums": true,
-			"declaration": true,
-			"emitDeclarationOnly": true,
-			"sourceMap": true
+		"outDir": "dist",
+		"target": "ES2015",
+		"module": "ESNext", // 指定生成的哪个模块化方案的模块代码， esnext、commonjs 等
+		"moduleResolution": "Node", // 指定使用的模块解析策略，nodenext 表示Node.js中 ES Module ，node 则为 Common.js
+		"resolveJsonModule": true, // 让 TypeScript 支持解析 .json 文件，并对导入的 json 对象提供类型支持
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"removeComments": true,
+		"esModuleInterop": true,
+		"preserveConstEnums": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"sourceMap": true
 	},
 	"ts-node": {
-    // It is faster to skip typechecking.
-    // Remove if you want ts-node to do typechecking.
-    "transpileOnly": true,
-    "files": true,
+		// It is faster to skip typechecking.
+		// Remove if you want ts-node to do typechecking.
+		"transpileOnly": true,
+		"files": true,
 		// 表示处理的都是ES Module模块
 		"esm": true,
 		// Only works for ts-node.
 		"compilerOptions": {
 			"module": "ES2022",
-			"moduleResolution": "Node",
+			"moduleResolution": "Node"
 		}
-  },
+	},
 
-	"include": [
-		"commands/*/src",
-		"packages/*/src",
-	],
-	"exclude": [
-		"commands/init/src/template/*",
-	],
+	"include": ["commands/*/src", "packages/*/src"],
+	"exclude": ["commands/init/src/template/*"]
 }
