@@ -1,32 +1,29 @@
 {
-  "name": "",
-  "version": "0.0.1",
-	"type": "module",
-  "description": "description",
-  "keywords": [
-    "vocli"
-  ],
-  "files": [],
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "engines": {
-    "node": "^14.15.0 || >=16.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
+	"name": "",
+	"version": "0.0.1",
+	"description": "",
+	"keywords": ["vocli"],
+	"files": ["dist"],
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"engines": {
+		"node": "^14.15.0 || >=16.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"author": {
-    "name": "ScoutYin",
-    "url": "https://github.com/ScoutYin"
-  },
+		"name": "ScoutYin",
+		"url": "https://github.com/ScoutYin"
+	},
 	"homepage": "https://github.com/ScoutYin/vocli",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ScoutYin/vocli.git",
-    "directory": ""
-  },
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ScoutYin/vocli.git",
+		"directory": ""
+	},
 	"bugs": {
-    "url": "https://github.com/ScoutYin/vocli/issues"
-  },
-  "license": "MIT"
+		"url": "https://github.com/ScoutYin/vocli/issues"
+	},
+	"license": "MIT"
 }

@@ -42,9 +42,9 @@ const createPackage = async () => {
 	const answers = await prompt();
 
 	const { dir, packageName } = answers;
-	const packageDirName = packageName.replace(new RegExp(SCOPE), '');
+	const unscopedPackageName = packageName.replace(new RegExp(SCOPE), '');
 
-	const dirPath = resolve(cwd, dir, packageDirName);
+	const dirPath = resolve(cwd, dir, unscopedPackageName);
 	const dest = resolve(dirPath, 'package.json');
 
 	if (fs.existsSync(dest)) {
@@ -75,9 +75,10 @@ const createPackage = async () => {
 	packageJson.name = packageName;
 	packageJson.description = answers.description;
 	packageJson.homepage += `/${dir}`;
-	if (packageDirName) {
-		packageJson.repository.directory = dir + packageDirName;
+	if (unscopedPackageName) {
+		packageJson.repository.directory = dir + unscopedPackageName;
 	}
+	packageJson.types = `dist/${unscopedPackageName}.d.ts`;
 
 	fs.writeFile(dest, JSON.stringify(packageJson, null, 2));
 };
