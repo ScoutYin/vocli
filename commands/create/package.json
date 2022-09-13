@@ -1,0 +1,34 @@
+{
+	"name": "@vocli/create",
+	"version": "0.0.1",
+	"description": "@vocli/create",
+	"keywords": [
+		"vocli"
+	],
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "dist/create.d.ts",
+	"engines": {
+		"node": "^14.15.0 || >=16.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": {
+		"name": "ScoutYin",
+		"url": "https://github.com/ScoutYin"
+	},
+	"homepage": "https://github.com/ScoutYin/vocli/commands/",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ScoutYin/vocli.git",
+		"directory": "commands/create"
+	},
+	"bugs": {
+		"url": "https://github.com/ScoutYin/vocli/issues"
+	},
+	"license": "MIT"
+}
