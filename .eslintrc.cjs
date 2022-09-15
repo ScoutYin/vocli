@@ -17,6 +17,7 @@ module.exports = {
 		'prettier/prettier': 'warn',
 		'@typescript-eslint/no-unused-vars': 'error',
 		'@typescript-eslint/no-empty-function': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
 	},
 	overrides: [
 		{
