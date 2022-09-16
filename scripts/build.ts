@@ -21,6 +21,10 @@ const commandBuildConfigs: BuildConfig[] = [
 		dir: 'commands/init',
 		unscopedPackageName: 'init',
 	},
+	{
+		dir: 'commands/create',
+		unscopedPackageName: 'create',
+	},
 ];
 
 const vocliBuildConfig: BuildConfig = {

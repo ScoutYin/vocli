@@ -7,7 +7,7 @@ export const getVcConfig = (options) => {
 	const { Router } = options;
 	return {
 		Icon: {
-			urls: ['//at.alicdn.com/t/c/font_3590527_hfrik3xwar5.js'],
+			urls: ['//at.alicdn.com/t/c/font_3590527_vtufi8qpcqp.js'],
 		},
 		Portal: {
 			install(app) {

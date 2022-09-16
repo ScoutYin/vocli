@@ -30,5 +30,13 @@
 	"bugs": {
 		"url": "https://github.com/ScoutYin/vocli/issues"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"@babel/generator": "^7.19.0",
+		"@babel/parser": "^7.19.1",
+		"@babel/traverse": "^7.19.1",
+		"@babel/types": "^7.19.0",
+		"@vocli/shared": "workspace:^0.0.1",
+		"inquirer": "^9.0.0"
+	}
 }

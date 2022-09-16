@@ -1,40 +1,41 @@
 {
-  "name": "vocli",
-  "version": "0.0.1",
-  "description": "vocli",
-  "keywords": [
-    "vocli"
-  ],
-  "files": [
-    "dist"
-  ],
-  "bin": "dist/index.cjs",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/vocli.d.ts",
-  "engines": {
-    "node": "^14.15.0 || >=16.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": {
-    "name": "ScoutYin",
-    "url": "https://github.com/ScoutYin"
-  },
-  "homepage": "https://github.com/ScoutYin/vocli/packages/",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ScoutYin/vocli.git",
-    "directory": "packages/vocli"
-  },
-  "bugs": {
-    "url": "https://github.com/ScoutYin/vocli/issues"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "@vocli/init": "workspace:^0.0.1",
-    "@vocli/shared": "workspace:^0.0.1",
-    "cac": "^6.7.14"
-  }
+	"name": "vocli",
+	"version": "0.0.1",
+	"description": "vocli",
+	"keywords": [
+		"vocli"
+	],
+	"files": [
+		"dist"
+	],
+	"bin": "dist/index.cjs",
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "dist/vocli.d.ts",
+	"engines": {
+		"node": "^14.15.0 || >=16.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": {
+		"name": "ScoutYin",
+		"url": "https://github.com/ScoutYin"
+	},
+	"homepage": "https://github.com/ScoutYin/vocli/packages/",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ScoutYin/vocli.git",
+		"directory": "packages/vocli"
+	},
+	"bugs": {
+		"url": "https://github.com/ScoutYin/vocli/issues"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@vocli/create": "workspace:^0.0.1",
+		"@vocli/init": "workspace:^0.0.1",
+		"@vocli/shared": "workspace:^0.0.1",
+		"cac": "^6.7.14"
+	}
 }

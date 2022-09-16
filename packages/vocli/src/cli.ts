@@ -1,6 +1,7 @@
 import cac from 'cac';
 import type { Cli, CommandRegister } from '@vocli/shared';
 import initCmd from '@vocli/init';
+import createCmd from '@vocli/create';
 
 class Vocli {
 	cli: Cli;
@@ -32,6 +33,7 @@ export default () => {
 	const vocli = new Vocli();
 
 	vocli.command(initCmd);
+	vocli.command(createCmd);
 
 	vocli.help().parse();
 };
