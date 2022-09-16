@@ -77,7 +77,7 @@ const generateRoute = async (answers: Answers) => {
 									t.objectProperty(t.identifier('path'), t.stringLiteral(_paths[0])),
 									t.objectProperty(
 										t.identifier('name'),
-										t.stringLiteral(pathsToName(paths.slice(0, paths.length - _paths.length)))
+										t.stringLiteral(pathsToName(paths.slice(0, paths.length - _paths.length + 1)))
 									),
 									t.objectProperty(
 										t.identifier('meta'),
