@@ -153,6 +153,8 @@ const generateRoute = async (answers: Answers) => {
 		jsescOption: {
 			// The type of quote to use in the output. If omitted, autodetects based on `ast.tokens`.
 			quotes: 'single',
+			// https://github.com/babel/babel/issues/9804
+			minimal: true,
 		},
 	});
 
