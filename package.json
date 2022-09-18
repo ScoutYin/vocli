@@ -9,7 +9,7 @@
 		"create": "ts-node scripts/create-package.ts",
 		"dev:init": "pnpm --filter init dev",
 		"dev:template": "pnpm --filter @vocli/template dev",
-		"build": "ts-node scripts/build.ts",
+		"build": "pnpm build:dts && ts-node scripts/build.ts",
 		"build:dts": "tsc"
 	},
 	"devDependencies": {
