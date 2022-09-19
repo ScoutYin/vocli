@@ -1,12 +1,14 @@
 {
 	"name": "@vocli/create",
+	"type": "commonjs",
 	"version": "0.0.1",
 	"description": "@vocli/create",
 	"keywords": [
 		"vocli"
 	],
 	"files": [
-		"dist"
+		"dist",
+		"template"
 	],
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",

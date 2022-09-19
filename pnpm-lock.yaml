@@ -21,6 +21,7 @@ importers:
       eslint-plugin-markdown: ^3.0.0
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-vue: ^9.4.0
+      execa: ^6.1.0
       fs-extra: ^10.1.0
       husky: ^8.0.0
       inquirer: ^9.0.0
@@ -46,6 +47,7 @@ importers:
       eslint-plugin-markdown: 3.0.0_eslint@8.19.0
       eslint-plugin-prettier: 4.2.1_7uxdfn2xinezdgvmbammh6ev5i
       eslint-plugin-vue: 9.4.0_eslint@8.19.0
+      execa: 6.1.0
       fs-extra: 10.1.0
       husky: 8.0.1
       inquirer: 9.0.0
@@ -73,13 +75,8 @@ importers:
   commands/init:
     specifiers:
       '@vocli/shared': workspace:^0.0.1
-      '@vocli/template': workspace:^0.0.1
-      vocli: workspace:^0.0.1
     dependencies:
       '@vocli/shared': link:../../packages/shared
-      vocli: link:../../packages/vocli
-    devDependencies:
-      '@vocli/template': link:../../packages/template
 
   packages/shared:
     specifiers:
@@ -1113,8 +1110,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2

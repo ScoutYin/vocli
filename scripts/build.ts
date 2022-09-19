@@ -4,7 +4,8 @@ import chalk from 'chalk';
 import fs from 'fs-extra';
 import { resolve } from 'path';
 import { Extractor, ExtractorConfig } from '@microsoft/api-extractor';
-import type { BuildOptions, BuildResult } from 'esbuild';
+import type { BuildOptions } from 'esbuild';
+import { execa } from 'execa';
 
 interface BuildConfig {
 	dir: string;
@@ -37,11 +38,13 @@ const vocliBuildConfig: BuildConfig = {
  */
 const copyTemplate = async () => {
 	const vocliTemplatePath = resolve('packages/vocli/dist/template');
+
 	if (fs.pathExistsSync(vocliTemplatePath)) {
 		await fs.emptyDir(vocliTemplatePath);
 	} else {
-		fs.mkdir(vocliTemplatePath);
+		fs.mkdir(vocliTemplatePath, { recursive: true });
 	}
+
 	const initCmdTemplatePath = resolve('commands/init/src/template');
 	await fs.copy(initCmdTemplatePath, vocliTemplatePath, {
 		filter: (src, dest) => {
@@ -85,55 +88,70 @@ const buildPackage = (packageConfig: BuildConfig) => {
 	];
 };
 
-const buildTypes = () => {
-	[sharedBuildConfig, ...commandBuildConfigs, vocliBuildConfig].forEach((packageConfig) => {
-		const apiExtractorJsonPath = resolve(packageConfig.dir, 'api-extractor.json');
-		const extractorConfig = ExtractorConfig.loadFileAndPrepare(apiExtractorJsonPath);
-		const extractorResult = Extractor.invoke(extractorConfig, {
-			localBuild: true,
-			showVerboseMessages: true,
-		});
-
-		if (extractorResult.succeeded) {
-			console.log(
-				chalk.bold(
-					chalk.green(
-						`API Extractor: ${packageConfig.unscopedPackageName}.d.ts generated successfully.`
-					)
-				)
-			);
-		} else {
-			console.error(
-				`API Extractor completed with ${extractorResult.errorCount} errors` +
-					` and ${extractorResult.warningCount} warnings`
-			);
-			process.exitCode = 1;
-		}
+const buildTypes = async (packageConfig) => {
+	const apiExtractorJsonPath = resolve(packageConfig.dir, 'api-extractor.json');
+	const extractorConfig = ExtractorConfig.loadFileAndPrepare(apiExtractorJsonPath);
+	const extractorResult = Extractor.invoke(extractorConfig, {
+		localBuild: true,
+		showVerboseMessages: true,
 	});
 
-	fs.remove(resolve(process.cwd(), 'dist'));
+	if (extractorResult.succeeded) {
+		console.log(
+			chalk.bold(
+				chalk.green(
+					`API Extractor: ${packageConfig.unscopedPackageName}.d.ts generated successfully.`
+				)
+			)
+		);
+	} else {
+		console.error(
+			`API Extractor completed with ${extractorResult.errorCount} errors` +
+				` and ${extractorResult.warningCount} warnings`
+		);
+		process.exitCode = 1;
+	}
+
+	fs.remove(resolve(packageConfig.dir, 'dist/types'));
 };
 
-const build = async () => {
-	const buildTasks: Promise<BuildResult>[] = [];
+const build = async (packageConfig) => {
+	const distDir = resolve(packageConfig.dir, 'dist');
+	if (fs.pathExistsSync(distDir)) {
+		await fs.emptyDir(distDir);
+	} else {
+		fs.mkdir(distDir);
+	}
 
-	commandBuildConfigs.forEach((packageConfig) => {
-		buildTasks.push(...buildPackage(packageConfig));
-	});
+	buildPackage(packageConfig);
 
-	buildTypes();
+	await execa('tsc', [
+		'-p',
+		`${packageConfig.dir}/tsconfig.json`,
+		'--outDir',
+		`${packageConfig.dir}/dist/types`,
+		'--skipLibCheck', // faster
+	]);
 
-	// build shared package, as a dependence, so it needs build first.
-	await Promise.all(buildPackage(sharedBuildConfig));
+	await buildTypes(packageConfig);
+};
 
-	// build commands
-	await Promise.all([...buildTasks, copyTemplate()]);
+const runBuild = async () => {
+	console.time('build');
 
-	// build vocli package, it depends on all packages, so build it at last.
-	await Promise.all(buildPackage(vocliBuildConfig));
+	copyTemplate();
 
+	// As a dependence, so it needs build first.
+	await build(sharedBuildConfig);
+	await Promise.all(commandBuildConfigs.map((packageConfig) => build(packageConfig)));
+	// It depends on all packages, so build it at last.
+	await build(vocliBuildConfig);
+
+	console.log();
 	console.log(chalk.green(`  Build succeeded!`));
 	console.log();
+
+	console.timeEnd('build');
 };
 
-build();
+runBuild();

@@ -1,6 +1,6 @@
 export const useActions = (refresh) => {
 	const getActions = (row) => {
-		return [{ label: '编辑' }, { label: '删除', show: row.status === 0 }];
+		return [{ label: '编辑' }, { label: '删除', show: row.xxx }];
 	};
 
 	const handleAction = async (label, row) => {

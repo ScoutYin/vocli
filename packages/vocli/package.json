@@ -1,5 +1,6 @@
 {
 	"name": "vocli",
+	"type": "commonjs",
 	"version": "0.0.1",
 	"description": "vocli",
 	"keywords": [

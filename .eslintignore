@@ -1,4 +1,4 @@
 dist
 node_modules
 commands/init/src/template
-commands/create/src/template/**/*.vue
+commands/create/template/**/*.vue

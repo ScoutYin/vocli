@@ -1,5 +1,6 @@
 {
 	"name": "@vocli/init",
+	"type": "commonjs",
 	"version": "0.0.1",
 	"description": "@vocli/init",
 	"keywords": [
@@ -8,7 +9,7 @@
 	"files": [
 		"dist"
 	],
-	"main": "dist/index.cjs",
+	"main": "dist/index.mjs",
 	"module": "dist/index.mjs",
 	"types": "dist/init.d.ts",
 	"scripts": {
@@ -35,10 +36,6 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@vocli/shared": "workspace:^0.0.1",
-		"vocli": "workspace:^0.0.1"
-	},
-	"peerDependencies": {
-		"@vocli/template": "workspace:^0.0.1"
+		"@vocli/shared": "workspace:^0.0.1"
 	}
 }

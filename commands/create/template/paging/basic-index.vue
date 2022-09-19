@@ -8,7 +8,7 @@
 			:router="true"
 			:footer="true"
 		>
-			<vc-table-column prop="" label="商品名称" />
+			<vc-table-column prop="" label="列名称" />
 			<vcc-table-actions-column :data-source="getActions" @action="handleAction" />
 		</vcc-paging>
 	</vcc-set-title>

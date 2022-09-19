@@ -1,6 +1,7 @@
 import type { CommandRegister } from '@vocli/shared';
-import prompt from './prompt';
-import generateRoute from './generate-route';
+// import prompt from './prompt';
+// import generateRoute from './generate-route';
+import generatePaging from './generate-paging';
 
 export interface CreateCmdOptions {
 	configPath: string;
@@ -8,8 +9,9 @@ export interface CreateCmdOptions {
 
 const create = async (options: CreateCmdOptions) => {
 	console.log(options);
-	const answers = await prompt();
-	generateRoute(answers);
+	// const answers = await prompt();
+	// generateRoute(answers);
+	generatePaging();
 };
 
 const commandRegister: CommandRegister = (cli) => {
